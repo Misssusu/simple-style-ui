@@ -10,7 +10,6 @@
   </button>
 </template>
 <script>
-
   export default {
     name: 'SButton'
   };
@@ -24,14 +23,6 @@
   $color: #333;
   $border-color: #999;
   $border-color-hover: #666;
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 
   .s-button {
     height: $button-height;

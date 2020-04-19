@@ -1,21 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <s-button></s-button>
+    <Past></Past>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import SButton from './components/Button/SButton.vue'
-
+import Past from "./Past";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    's-button': SButton
+    Past
   }
 }
 </script>
