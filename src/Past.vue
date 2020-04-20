@@ -1,5 +1,5 @@
 <template>
-  <s-button>默认按钮</s-button>
+  <s-button type="primary">默认按钮</s-button>
 </template>
 
 <script>
@@ -7,7 +7,9 @@
 
   export default {
     name: 'Past.vue',
-    's-button': SButton
+    components: {
+      's-button': SButton
+    }
   };
 </script>
 

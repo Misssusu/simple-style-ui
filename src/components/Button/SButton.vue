@@ -1,6 +1,6 @@
 <template>
   <button
-    class="s-button"
+    :class="classes"
     @click="$emit('click', $event)">
 <!--    <s-icon v-if="icon && !loading" :name="icon"></s-icon>-->
 <!--    <s-icon class="loading icon" v-if="loading" name="loading"></s-icon>-->
@@ -11,25 +11,31 @@
 </template>
 <script>
   export default {
-    name: 'SButton'
+    name: 'SButton',
+    props: {
+      type: {
+        type: String,
+        default: 'primary',
+        validator: function(value){
+          return ['primary','warning','danger','info','success'].indexOf(value) > -1
+
+        }
+      }
+    },
+    computed: {
+      classes(){
+        return ['s-button',`s-button-${this.type}`]
+      }
+    }
   };
 </script>
 <style lang="scss" scoped>
-  $button-height: 32px;
-  $font-size: 14px;
-  $button-bg: white;
-  $button-active-bg: #eee;
-  $button-radius: 4px;
-  $color: #333;
-  $border-color: #999;
-  $border-color-hover: #666;
-
   .s-button {
-    height: $button-height;
-    font-size: $font-size;
-    border-radius: $button-radius;
-    border: 1px solid $border-color;
-    background: $button-bg;
+    height: $--button-height;
+    font-size: $--font-size;
+    border-radius: $--button-radius;
+    border: 1px solid $--border-color;
+    background: $--button-bg;
     padding: .25em 1em;
     display: inline-flex;
     justify-content: center;
@@ -38,11 +44,11 @@
     cursor: pointer;
 
     &:hover {
-      border-color: $border-color-hover;
+      border-color: $--border-color-hover;
     }
 
     &:active {
-      background: $button-active-bg;
+      background: $--button-active-bg;
     }
 
     &:focus {
@@ -70,5 +76,6 @@
         margin-right: 0;
       }
     }
+    &-primary {}
   }
 </style>

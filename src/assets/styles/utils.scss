@@ -1,0 +1,8 @@
+/*  Center
+-------------------------- */
+@mixin flexCenterMx($flexType){
+  display: $flexType;
+  justify-content: center;
+  align-items: center;
+}
+
