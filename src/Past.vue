@@ -6,17 +6,14 @@
     <s-button type="danger">Danger</s-button>
     <s-button type="info">Info</s-button>
     <s-button type="success">Success</s-button>
+    <s-input></s-input>
   </div>
 </template>
 
 <script>
-  import SButton from './components/Button/SButton.vue'
 
   export default {
-    name: 'Past.vue',
-    components: {
-      's-button': SButton
-    }
+    name: 'Past.vue'
   };
 </script>
 
