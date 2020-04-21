@@ -17,8 +17,7 @@
         type: String,
         default: 'primary',
         validator: function(value){
-          return ['primary','warning','danger','info','success'].indexOf(value) > -1
-
+          return ['default','primary','warning','danger','info','success'].indexOf(value) > -1
         }
       }
     },
@@ -35,21 +34,12 @@
     font-size: $--font-size;
     border-radius: $--button-radius;
     border: 1px solid $--border-color;
-    background: $--button-bg;
-    padding: .25em 1em;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    background: $--color-default-fill;
+    padding: $--button-padding;
+    @include flexCenterMx(inline-flex);
     vertical-align: middle;
     cursor: pointer;
-
-    &:hover {
-      border-color: $--border-color-hover;
-    }
-
-    &:active {
-      background: $--button-active-bg;
-    }
+    color: $--color;
 
     &:focus {
       outline: none;
@@ -76,6 +66,72 @@
         margin-right: 0;
       }
     }
-    &-primary {}
+    &-default:hover {
+      color: $--color-default-hover;
+      border-color: $--border-color-hover;
+      background: $--color-default-hover-fill;
+      &:active {
+        color: $--button-default-active;
+        border-color: $--button-default-active;
+      }
+    }
+    &-primary {
+      background: $--color-primary-fill;
+      border-color: $--color-primary-fill;
+      color: $--color-white;
+      &:hover {
+        background: $--color-primary-hover;
+      }
+      &:active {
+        background: $--color-primary-active;
+      }
+    }
+    &-warning {
+      background: $--color-warning-fill;
+      border-color: $--color-warning-fill;
+      color: $--color-white;
+      &:hover {
+        background: $--color-warning-hover;
+      }
+      &:active {
+        background: $--color-warning-active;
+      }
+    }
+    &-danger {
+      background: $--color-danger-fill;
+      border-color: $--color-danger-fill;
+      color: $--color-white;
+      &:hover {
+        background: $--color-danger-hover;
+      }
+      &:active {
+        background: $--color-danger-active;
+      }
+    }
+    &-info {
+      background: $--color-info-fill;
+      border-color: $--color-info-fill;
+      color: $--color-white;
+      &:hover {
+        background: $--color-info-hover;
+      }
+      &:active {
+        background: $--color-info-active;
+      }
+    }
+    &-success {
+      background: $--color-success-fill;
+      border-color: $--color-success-fill;
+      color: $--color-white;
+      &:hover {
+        background: $--color-success-hover;
+      }
+      &:active {
+        background: $--color-success-active;
+      }
+    }
+    & + & {
+      margin-left: 4px;
+    }
   }
 </style>
