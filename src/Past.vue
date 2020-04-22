@@ -6,14 +6,21 @@
     <s-button type="danger">Danger</s-button>
     <s-button type="info">Info</s-button>
     <s-button type="success">Success</s-button>
-    <s-input></s-input>
+    <s-input v-model="value" placeholder="Please enter content"></s-input>
+    <h1>{{value}}</h1>
+    <s-input :disabled="true" placeholder="Please enter content"></s-input>
   </div>
 </template>
 
 <script>
 
   export default {
-    name: 'Past.vue'
+    name: 'Past.vue',
+    data(){
+      return {
+        value: ''
+      }
+    }
   };
 </script>
 
