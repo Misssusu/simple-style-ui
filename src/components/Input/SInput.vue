@@ -4,11 +4,24 @@
       class="s-input"
       :value="value"
       :disabled="disabled"
-      type="text"
+      :type="type"
       :placeholder="placeholder"
       @change="$emit('change', $event.target.value)"
       @input="$emit('input', $event.target.value)"
     >
+    <div class="s-input-icon" v-if="clearable && nonEmpty">
+      <s-icon name="clear" @click="clickEvent"></s-icon>
+    </div>
+    <div class="s-input-icon" v-if="search">
+      <s-icon name="search" @click="clickEvent"></s-icon>
+    </div>
+    <div class="s-input-icon" v-if="showPassword">
+      <s-icon name="eye" @click="clickEvent" v-if="eye"></s-icon>
+      <s-icon name="icon_eye-close" @click="clickEvent" v-if="!eye"></s-icon>
+    </div>
+    <div class="s-input-icon" v-if="calendar">
+      <s-icon name="calendar" @click="clickEvent"></s-icon>
+    </div>
   </div>
 </template>
 
@@ -25,6 +38,44 @@
       disabled: {
         type: Boolean,
         default: false
+      },
+      iconName: {
+        type: String
+      },
+      clearable: {
+        type: Boolean
+      },
+      search: {
+        type: Boolean
+      },
+      showPassword: {
+        type: Boolean
+      },
+      calendar: {
+        type: Boolean
+      }
+    },
+    computed: {
+      nonEmpty(){
+        return this.value;
+      },
+      type(){
+        return this.eye? 'password': 'text';
+      }
+    },
+    data(){
+      return {
+        eye: true
+      }
+    },
+    methods: {
+      clickEvent(){
+        if(this.clearable) {
+          this.$emit('input', '');
+        }
+        if(this.showPassword) {
+          this.eye = !this.eye;
+        }
       }
     }
   };
@@ -41,6 +92,7 @@
     border: 1px solid $--input-border-color;
     background: $--color-white;
     transition: background-color .3s;
+    width: 100%;
     &:hover {
       border-color: $--input-border-color-hover;
     }
@@ -51,5 +103,19 @@
   .s-input[disabled] {
     color: $--input-color-disabled;
     background: $--input-color-fill-disabled;
+  }
+  .s-input-wrapper {
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    align-items: center;
+    .s-input-icon {
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+    }
+    & + & {
+      margin-left: 4px;
+    }
   }
 </style>

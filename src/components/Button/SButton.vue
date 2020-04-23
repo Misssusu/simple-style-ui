@@ -15,7 +15,7 @@
     props: {
       type: {
         type: String,
-        default: 'primary',
+        default: 'default',
         validator: function(value){
           return ['default','primary','warning','danger','info','success'].indexOf(value) > -1
         }
