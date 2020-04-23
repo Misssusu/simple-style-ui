@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: 'SPopover.vue',
+    name: 'SPopover',
     mounted(){
       this.bindTrigger();
     },
@@ -151,6 +151,7 @@
     border-radius: $--button-radius;
     max-width: 20em;
     word-break: break-all;
+    color: #606266;
 
     &::before, &::after {
       content: '';

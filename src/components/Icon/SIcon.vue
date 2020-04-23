@@ -7,7 +7,7 @@
 <script>
   import '../../assets/icons/index'
   export default {
-    name: 'SIcon.vue',
+    name: 'SIcon',
     props: {
       name: {
         type: String,

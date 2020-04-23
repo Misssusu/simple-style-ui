@@ -27,7 +27,7 @@
 
 <script>
   export default {
-    name: 'SInput.vue',
+    name: 'SInput',
     props: {
       value: {
         type: [String, Number, Date]
