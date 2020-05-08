@@ -1,6 +1,6 @@
 {
   "name": "simple-style-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A UI library of simple-style-ui, built with Vue.js",
   "main": "./dist/simple-style-ui.umd.min.js",
   "private": false,

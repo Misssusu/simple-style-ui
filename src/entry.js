@@ -4,9 +4,9 @@ import components from './components/index'
 const install = function(Vue){
   if(install.installed) return;
   install.installed = true;
-  components.map(component => {
-    Vue.component(component.name,component)
-  })
+  Object.keys(components).forEach(name => {
+    Vue.component(name, components[name]);
+  });
 };
 
 /** 支持使用标签方式引入 */
