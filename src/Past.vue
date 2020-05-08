@@ -21,25 +21,25 @@
         <template slot="content">
           <div>Popover Content</div>
         </template>
-        <s-button>Pop It!</s-button>
+        <s-button>Pop It !</s-button>
       </s-popover>
       <s-popover position="left">
         <template slot="content">
           <div>Popover Content</div>
         </template>
-        <s-button>Pop It!</s-button>
+        <s-button>Pop It !</s-button>
       </s-popover>
       <s-popover position="right">
         <template slot="content">
           <div>Popover Content</div>
         </template>
-        <s-button>Pop It!</s-button>
+        <s-button>Pop It !</s-button>
       </s-popover>
       <s-popover position="bottom">
         <template slot="content">
           <div>Popover Content</div>
         </template>
-        <s-button>Pop It!</s-button>
+        <s-button>Pop It !</s-button>
       </s-popover>
     </div>
     <div class="tabs item">
@@ -55,6 +55,19 @@
           <s-tabs-pane name="Career">Career</s-tabs-pane>
         </s-tabs-body>
       </s-tabs>
+    </div>
+    <div class="collapse item">
+      <s-collapse selected="1">
+        <s-collapse-item title="Title1" name="1">
+          <div>Content1</div>
+        </s-collapse-item>
+        <s-collapse-item title="Title2" name="2">
+          <div>Content2</div>
+        </s-collapse-item>
+        <s-collapse-item title="Title3" name="3">
+          <div>Content3</div>
+        </s-collapse-item>
+      </s-collapse>
     </div>
   </div>
 </template>
