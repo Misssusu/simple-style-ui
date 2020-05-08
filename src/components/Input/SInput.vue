@@ -7,7 +7,7 @@
       :type="type"
       :placeholder="placeholder"
       @change="$emit('change', $event.target.value)"
-      @input="$emit('input', $event.target.value)"
+      @input="$emit('tabs.js', $event.target.value)"
     >
     <div class="s-input-icon" v-if="clearable && nonEmpty">
       <s-icon name="clear" @click="clickEvent"></s-icon>
@@ -71,7 +71,7 @@
     methods: {
       clickEvent(){
         if(this.clearable) {
-          this.$emit('input', '');
+          this.$emit('tabs.js', '');
         }
         if(this.showPassword) {
           this.eye = !this.eye;
