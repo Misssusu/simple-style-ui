@@ -7,6 +7,8 @@ import STabsHead from "./Tabs/STabsHead.vue";
 import STabsItem from "./Tabs/STabsItem.vue";
 import STabsBody from "./Tabs/STabsBody.vue";
 import STabsPane from "./Tabs/STabsPane.vue";
+import SCollapse from "./Collapse/SCollapse.vue";
+import SCollapseItem from "./Collapse/SCollapseItem.vue";
 
 
 
@@ -20,5 +22,7 @@ export default {
   STabsHead,
   STabsItem,
   STabsBody,
-  STabsPane
+  STabsPane,
+  SCollapse,
+  SCollapseItem
 }
