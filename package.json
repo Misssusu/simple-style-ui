@@ -1,17 +1,37 @@
 {
   "name": "simple-style-ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
+  "description": "A UI library of simple-style-ui, built with Vue.js",
+  "main": "./dist/simple-style-ui.umd.min.js",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:ui": "vue-cli-service build --target lib --name simple-style-ui ./src/entry.js",
     "test:unit": "vue-cli-service test:unit"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Misssusu/simple-style-ui"
+  },
+  "keywords": [
+    "Vue",
+    "UI"
+  ],
+  "files": [
+    "dist/*"
+  ],
+  "author": "suyuan",
+  "license": "MIT",
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vuex": "^3.2.0"
   },
+  "bugs": {
+    "url": "https://github.com/Misssusu/simple-style-ui/issues"
+  },
+  "homepage": "https://github.com/Misssusu/simple-style-ui/#/",
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.3.0",
     "@vue/cli-plugin-unit-mocha": "^4.3.0",
