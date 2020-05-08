@@ -80,8 +80,10 @@
     font-size: 13px;
     position: absolute;
     right: 4px;
+    transition: all .3s;
   }
   .collapse-icon.active {
     transform: rotate(90deg);
+    transition: all .3s;
   }
 </style>

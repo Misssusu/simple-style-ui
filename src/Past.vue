@@ -16,6 +16,20 @@
       <s-input v-model="passwordValue" show-password placeholder="Please enter content"></s-input>
       <s-input v-model="calendarValue" calendar placeholder="Please select a date"></s-input>
     </div>
+    <div class="tabs item">
+      <s-tabs selected="Home">
+        <s-tabs-head>
+          <s-tabs-item name="Home">Home</s-tabs-item>
+          <s-tabs-item name="About">About</s-tabs-item>
+          <s-tabs-item name="Career">Career</s-tabs-item>
+        </s-tabs-head>
+        <s-tabs-body>
+          <s-tabs-pane name="Home">Home</s-tabs-pane>
+          <s-tabs-pane name="About">About</s-tabs-pane>
+          <s-tabs-pane name="Career">Career</s-tabs-pane>
+        </s-tabs-body>
+      </s-tabs>
+    </div>
     <div class="popover item">
       <s-popover position="top">
         <template slot="content">
@@ -41,20 +55,6 @@
         </template>
         <s-button>Pop It !</s-button>
       </s-popover>
-    </div>
-    <div class="tabs item">
-      <s-tabs selected="Home">
-        <s-tabs-head>
-          <s-tabs-item name="Home">Home</s-tabs-item>
-          <s-tabs-item name="About">About</s-tabs-item>
-          <s-tabs-item name="Career">Career</s-tabs-item>
-        </s-tabs-head>
-        <s-tabs-body>
-          <s-tabs-pane name="Home">Home</s-tabs-pane>
-          <s-tabs-pane name="About">About</s-tabs-pane>
-          <s-tabs-pane name="Career">Career</s-tabs-pane>
-        </s-tabs-body>
-      </s-tabs>
     </div>
     <div class="collapse item">
       <s-collapse selected="1">
