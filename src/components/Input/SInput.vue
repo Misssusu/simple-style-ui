@@ -7,7 +7,9 @@
       :type="type"
       :placeholder="placeholder"
       @change="$emit('change', $event.target.value)"
-      @input="$emit('tabs.js', $event.target.value)"
+      @input="$emit('input', $event.target.value)"
+      @focus="$emit('focus', $event.target.value)"
+      @blur="$emit('blur', $event.target.value)"
     >
     <div class="s-input-icon" v-if="clearable && nonEmpty">
       <s-icon name="clear" @click="clickEvent"></s-icon>
@@ -16,8 +18,8 @@
       <s-icon name="search" @click="clickEvent"></s-icon>
     </div>
     <div class="s-input-icon" v-if="showPassword">
-      <s-icon name="eye" @click="clickEvent" v-if="eye"></s-icon>
-      <s-icon name="icon_eye-close" @click="clickEvent" v-if="!eye"></s-icon>
+      <s-icon name="eye" @click="clickEvent" v-if="!eye"></s-icon>
+      <s-icon name="icon_eye-close" @click="clickEvent" v-if="eye"></s-icon>
     </div>
     <div class="s-input-icon" v-if="calendar">
       <s-icon name="calendar" @click="clickEvent"></s-icon>
@@ -65,13 +67,13 @@
     },
     data(){
       return {
-        eye: true
+        eye: this.showPassword
       }
     },
     methods: {
       clickEvent(){
         if(this.clearable) {
-          this.$emit('tabs.js', '');
+          this.$emit('input', '');
         }
         if(this.showPassword) {
           this.eye = !this.eye;

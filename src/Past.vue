@@ -9,6 +9,7 @@
       <s-button type="success">Success</s-button>
     </div>
     <div class="input item">
+      <s-input placeholder="Please enter content"></s-input>
       <span>{{value}}</span>
       <s-input v-model="value" clearable placeholder="Please enter content"></s-input>
       <s-input v-model="disabledValue" :disabled="true" placeholder="Please enter content"></s-input>
